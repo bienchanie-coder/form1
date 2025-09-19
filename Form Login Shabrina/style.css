@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://i.pinimg.com/1200x/13/d6/24/13d624efee9651fbc56841050f8c9620.jpg') right; /* bisa pakai gambar */
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 161, 255, 0.5); /* overlay warna pink transparan */
+    backdrop-filter: blur(10px); /* efek blur */
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.6); /* semi transparan agar blur kelihatan */
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(5px); /* blur tambahan di dalam box */
+}
+
+.login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr {
+    border-top: 2px solid #ffa1ff;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0 20px;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #ffa1ff;
+}
+
+button:hover {
+    background: rgba(214, 86, 64, 1);
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    max-width: 80%; /* gambar lebih kecil */
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+    .container {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .right img {
+        max-width: 50%;
+        margin-top: 20px;
+    }
+}
+
+body img {
+    width: 700px;              /* ukuran gambar (bisa disesuaikan) */
+    height: 400px;             /* bikin lebih tinggi agar oval terlihat */
+    border-radius: 50% / 45%;  /* efek oval */
+    object-fit: cover;         /* gambar tetap proporsional */
+    display: block;            /* rapikan layout */
+    margin: 40px auto;         /* posisikan di tengah */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* bayangan lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body img:hover {
+    transform: scale(1.05); /* zoom ringan */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* bayangan lebih tegas */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    body img {
+        width: 200px;
+        height: 280px;
+    }
+}

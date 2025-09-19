@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: darkslategrey;
+    color: darkslategrey;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;   
+}
+
+.logo {
+    font-size: 25px;
+    color: darkslategrey;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: darkslategrey;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 3s;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: darksalmon;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative; /* supaya ::before bisa ditempel */
+    overflow: hidden;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/1200x/73/9c/b1/739cb1aea4db2313a47b9446b894b4ec.jpg') center; /* ganti sesuai gambar kamu */
+    filter: blur(8px); /* tingkat blur */
+    z-index: -1; /* biar di belakang teks */
+}
+
+.home-content {
+    max-width: 600px;
+
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: darkslategrey
+}
+
+.home-content p {
+    font-size: 17px;
+    margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+    width: 345px;
+    height: 50px;
+    background: transparent;
+}
+
+.btn-box {
+    display: flex;
+    gap: 15px; /* Jarak antar tombol */
+    padding: 10px 0;
+    flex-wrap: wrap; /* Supaya tombol tidak overflow di layar kecil */
+}
+
+.btn-box a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 45px;
+    background-color: bisque;
+    border: 2px solid bisque;
+    border-radius: 8px;
+    font-size: 18px;
+    color: darkslategrey;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Tombol kedua (Let's Talk) */
+.btn-box a:nth-child(2) {
+    background: transparent;
+    border: 2px solid bisque;
+}
+
+/* Hover effect tombol kedua */
+.btn-box a:nth-child(2):hover {
+    color: #FFB6C1;
+    background-color: rgba(255, 228, 196, 0.3); /* efek hover ringan */
+}
+
+/* Background animasi hover */
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: darksalmon;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .btn-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-box a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Gaya untuk gambar berbentuk oval */
+body img {
+    width: 600px;              /* ukuran gambar (bisa disesuaikan) */
+    height: 400px;             /* bikin lebih tinggi agar oval terlihat */
+    border-radius: 50% / 35%;  /* efek oval */
+    object-fit: cover;         /* gambar tetap proporsional */
+    display: block;            /* rapikan layout */
+    margin: 50px auto;         /* posisikan di tengah */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* bayangan lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover untuk gambar */
+body img:hover {
+    transform: scale(1.05); /* zoom ringan */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* bayangan lebih tegas */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    body img {
+        width: 200px;
+        height: 280px;
+    }
+}
